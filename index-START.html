@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+  <link rel="stylesheet" href="styles.css" type='text/css'>
+</head>
+<body>
+  <div id="all">
+    <p>YOLO</p>
+  </div>
+<script>
+const pressed = [];
+const secretCode = 'jessica';
+const backgroundColors = ['#FCF029','#FC5F29','#CAFC29', '#29FC66','#29F0FC','#4F29FC','#FC29D9','#FC2944'];
+const fontColors = ['#F2B5BD','#F5DB7C','#BEF0A4', '#A4F0E6','#A4C5F0','#D2A4F0','#F0A4B6','#A4A4F0'];
+let word = document.getElementsByTagName('p');
+
+function changeColor() {
+  let randomColor = Math.floor(Math.random()*backgroundColors.length);
+  console.log('color change!');
+  document.body.style.background = backgroundColors[randomColor];
+  document.getElementById('all').style.color = fontColors[randomColor];
+
+}
+
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length -1, pressed.length - secretCode.length);
+    console.log('yo', pressed);
+    if(pressed.join('').includes(secretCode)) {
+      console.log('DING DING');
+      cornify_add();
+      changeColor();
+    }
+  });
+</script>
+</body>
+</html>
