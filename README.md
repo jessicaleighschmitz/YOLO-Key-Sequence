@@ -6,7 +6,7 @@
 
 https://jessicaleighschmitz.github.io/YOLO-Key-Sequence/
 
-###Directions
+### Directions
 
 Type the secret code while clicked into the browser window. If you get it right magic appears!
 
